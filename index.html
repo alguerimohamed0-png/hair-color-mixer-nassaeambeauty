@@ -47,6 +47,30 @@
     <option value="8.3">8.3 أشقر ذهبي فاتح</option>
     <option value="9.3">9.3 أشقر ذهبي فاتح جدا</option>
     <option value="10.3">10.3 أشقر بلاتيني ذهبي</option>
+    <option value="4.4">4.4 كستنائي نحاسي</option>
+    <option value="5.4">5.4 بني فاتح نحاسي</option>
+    <option value="6.4">6.4 أشقر داكن نحاسي</option>
+    <option value="7.4">7.4 أشقر متوسط نحاسي</option>
+    <option value="8.4">8.4 أشقر فاتح نحاسي</option>
+    <option value="6.6">6.6 أشقر داكن أحمر</option>
+    <option value="7.6">7.6 أشقر متوسط أحمر</option>
+    <option value="8.6">8.6 أشقر فاتح أحمر</option>
+    <option value="5.7">5.7 بني فاتح بنفسجي</option>
+    <option value="6.7">6.7 أشقر داكن بنفسجي</option>
+    <option value="7.7">7.7 أشقر متوسط بنفسجي</option>
+    <option value="8.7">8.7 أشقر فاتح بنفسجي</option>
+    <option value="9.7">9.7 أشقر فاتح جدا بنفسجي</option>
+    <option value="5M">5M بني فاتح مطفي</option>
+    <option value="6M">6M أشقر غامق مطفي</option>
+    <option value="7M">7M أشقر متوسط مطفي</option>
+    <option value="8M">8M أشقر فاتح مطفي</option>
+    <option value="9M">9M أشقر فاتح جدا مطفي</option>
+    <option value="10M">10M أشقر بلاتيني مطفي</option>
+    <option value="12.0">12.0 أشقر طبيعي</option>
+    <option value="12.11">12.11 أشقر بيج مطفي</option>
+    <option value="12.111">12.111 أشقر رمادي بلاتيني</option>
+    <option value="12.7">12.7 أشقر رملي بنفسجي</option>
+    <option value="12.75">12.75 أشقر بنفسجي ماهوجني</option>
   </select>
 
   <br><br>
@@ -78,20 +102,4 @@
       "6.3": { name: "أشقر ذهبي داكن", color: "#c49a6c" },
       "7.3": { name: "أشقر ذهبي متوسط", color: "#d9b37d" },
       "8.3": { name: "أشقر ذهبي فاتح", color: "#f0d9a6" },
-      "9.3": { name: "أشقر ذهبي فاتح جدا", color: "#f7e7c6" },
-      "10.3": { name: "أشقر بلاتيني ذهبي", color: "#f9f5e3" }
-    };
-
-    function mixColors() {
-      const catalog = document.getElementById("catalogColor").value;
-      if(catalogDB[catalog]) {
-        document.getElementById("result").style.backgroundColor = catalogDB[catalog].color;
-        document.getElementById("description").innerText = "النتيجة: " + catalogDB[catalog].name;
-      } else {
-        document.getElementById("result").style.backgroundColor = "#ccc";
-        document.getElementById("description").innerText = "النتيجة غير موجودة في القاعدة";
-      }
-    }
-  </script>
-</body>
-</html>
+      "9.3": { name: "أشقر ذهبي فاتح جدا", color: "#f7
