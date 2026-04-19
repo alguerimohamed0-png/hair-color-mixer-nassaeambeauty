@@ -2,10 +2,67 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>اختيار لون الصبغة</title>
+  <title>أداة خلط الصبغات</title>
+  <style>
+    body { font-family: Tahoma; text-align: center; background: #fdfdfd; }
+    h2 { color: #444; }
+    label { font-weight: bold; }
+    .color-box { width: 120px; height: 120px; margin: 20px auto; border: 1px solid #000; }
+    select, button { margin: 10px; padding: 5px; }
+  </style>
 </head>
 <body>
-  <h1>مرحبا بكم في موقع خلط ألوان الصبغة</h1>
-  <p>هذا مثال بسيط للتجربة.</p>
+  <h2>اختيار لون الصبغة</h2>
+
+  <label>لون الشعر الحالي:</label>
+  <select id="baseColor">
+    <option value="black">أسود</option>
+    <option value="brown-medium">بني متوسط</option>
+    <option value="brown-light">بني فاتح</option>
+  </select>
+
+  <br><br>
+  <label>درجة من الكتالوج:</label>
+  <select id="catalogColor">
+    <option value="1.0">أسود مزرق (1.0)</option>
+    <option value="4.003">كستنائي كثيف دافئ (4.003)</option>
+    <option value="5.003">بني فاتح مكثف دافئ (5.003)</option>
+    <option value="6.003">أشقر غامق مكثف دافئ (6.003)</option>
+    <option value="7.003">أشقر متوسط مكثف دافئ (7.003)</option>
+    <option value="8.003">أشقر فاتح مكثف دافئ (8.003)</option>
+    <option value="9.003">أشقر فاتح جدا مكثف دافئ (9.003)</option>
+    <option value="10.003">أشقر بلاتيني مكثف دافئ (10.003)</option>
+  </select>
+
+  <br><br>
+  <button onclick="mixColors()">عرض النتيجة</button>
+
+  <div id="result" class="color-box"></div>
+  <p id="description"></p>
+
+  <script>
+    function mixColors() {
+      const base = document.getElementById("baseColor").value;
+      const catalog = document.getElementById("catalogColor").value;
+      let desc = "";
+      let colorResult = "#999";
+
+      // قاعدة بيانات بسيطة للنتائج
+      if(base === "black" && catalog === "1.0") {
+        desc = "النتيجة: أسود مزرق قوي"; colorResult = "#0a0f2b";
+      } else if(base === "brown-medium" && catalog === "4.003") {
+        desc = "النتيجة: كستنائي كثيف دافئ"; colorResult = "#5a3a2b";
+      } else if(base === "brown-light" && catalog === "5.003") {
+        desc = "النتيجة: بني فاتح مكثف دافئ"; colorResult = "#a67c52";
+      } else if(base === "brown-light" && catalog === "6.003") {
+        desc = "النتيجة: أشقر غامق مكثف دافئ"; colorResult = "#d2a679";
+      } else {
+        desc = "نتيجة تقريبية من الكتالوج"; colorResult = "#ccc";
+      }
+
+      document.getElementById("result").style.backgroundColor = colorResult;
+      document.getElementById("description").innerText = desc;
+    }
+  </script>
 </body>
 </html>
