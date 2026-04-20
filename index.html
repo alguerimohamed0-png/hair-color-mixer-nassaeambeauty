@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="utf-8" />
-  <title>أداة خلط الصبغات - شامل مع عجلة الألوان وقاعدة التفتيح</title>
+  <title>أداة خلط الصبغات - كامل من الكتالوج</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     body { font-family: Tahoma, Arial, sans-serif; direction: rtl; text-align: center; background:#fafafa; color:#222; padding:20px; }
@@ -14,14 +14,14 @@
     .note { color:#555; font-size:13px; margin-top:8px; text-align:right; }
     .warning { color:#b33; font-weight:700; }
     .small { font-size:12px; color:#666; text-align:right; }
-    table { margin:10px auto; border-collapse:collapse; font-size:13px; }
-    td, th { padding:6px 8px; border:1px solid #eee; }
     .row { display:flex; gap:12px; justify-content:center; align-items:center; margin-top:10px; flex-wrap:wrap; }
     .pill { background:#f5f5f5; padding:6px 10px; border-radius:20px; font-size:13px; }
+    table { margin:10px auto; border-collapse:collapse; font-size:13px; }
+    td, th { padding:6px 8px; border:1px solid #eee; }
   </style>
 </head>
 <body>
-  <h2>أداة خلط الصبغات — شاملة مع عجلة الألوان وقاعدة التفتيح</h2>
+  <h2>أداة خلط الصبغات — كامل من الكتالوج</h2>
 
   <label>لون الشعر الحالي (اختر أقرب مستوى)</label>
   <select id="baseColor">
@@ -39,62 +39,137 @@
 
   <label>درجة من الكتالوج (اختر الكود)</label>
   <select id="catalogColor">
-    <!-- قائمة واسعة من الأكواد -->
+    <!-- كل الأكواد الواردة في الكتالوج المرفوع -->
     <option value="1.0">1.0 أسود مزرق</option>
+    <option value="1.7">1.7 أسود</option>
+
     <option value="2.0">2.0 أسود بني</option>
+
     <option value="3.0">3.0 بني غامق</option>
 
     <option value="4.0">4.0 بني متوسط</option>
+    <option value="4.00">4.00</option>
+    <option value="4.003">4.003 كستنائي كثيف دافئ</option>
+    <option value="4.01">4.01 بني بارد</option>
     <option value="4.1">4.1 كستنائي رمادي (Ash)</option>
+    <option value="4.11">4.11 بني رمادي مكثف</option>
+    <option value="4.12">4.12 كستنائي لؤلؤي</option>
+    <option value="4.13">4.13 بني بيج</option>
     <option value="4.3">4.3 كستنائي ذهبي</option>
+    <option value="4.17">4.17 (Gold/Teak)</option>
     <option value="4.4">4.4 كستنائي نحاسي</option>
+    <option value="4.6">4.6 (ash/red mix)</option>
+    <option value="4.66">4.66 كستنائي محمر فاتح</option>
+    <option value="4.31">4.31 كستنائي بيج بندقي</option>
+    <option value="4.35">4.35 موكا/بندقي غامق</option>
 
     <option value="5.0">5.0 بني فاتح</option>
+    <option value="5.00">5.00</option>
+    <option value="5.003">5.003 بني فاتح مكثف دافئ</option>
+    <option value="5.01">5.01 بني فاتح مكثف</option>
     <option value="5.1">5.1 كستنائي فاتح رمادي</option>
+    <option value="5.11">5.11 بني فاتح مكثف رمادي</option>
+    <option value="5.12">5.12 بني فاتح رمادي لؤلؤي</option>
+    <option value="5.13">5.13 بني فاتح بيج لؤلؤي</option>
     <option value="5.3">5.3 بني ذهبي فاتح</option>
+    <option value="5.23">5.23 بني فاتح</option>
+    <option value="5.31">5.31 كستنائي فاتح بندقي</option>
     <option value="5.4">5.4 بني فاتح نحاسي</option>
+    <option value="5.6">5.6 (red family)</option>
     <option value="5.7">5.7 بني فاتح بنفسجي</option>
+    <option value="5.8">5.8 (hazelnut/beige)</option>
+    <option value="5.65">55.65 احمر توتي بني فاتح</option>
+    <option value="5.66">55.66 احمر فاتح كريز</option>
     <option value="5M">5M بني فاتح مطفي</option>
 
     <option value="6.0">6.0 أشقر غامق</option>
+    <option value="6.00">6.00</option>
+    <option value="6.003">6.003 أشقر غامق مكثف دافئ</option>
+    <option value="6.01">6.01 اشقر رمادي غامق</option>
     <option value="6.1">6.1 أشقر رمادي غامق</option>
+    <option value="6.11">6.11 اشقر رمادي داكن مكثف</option>
+    <option value="6.12">6.12 بني بيج فاتح</option>
+    <option value="6.13">6.13 اشقر غامق رمادي لؤلؤي</option>
     <option value="6.3">6.3 أشقر ذهبي داكن</option>
+    <option value="6.23">6.23 اشقر بيج ذهبي داكن</option>
+    <option value="6.31">6.31 اشقر داكن بندقي</option>
+    <option value="6.35">6.35 اشقر غامق موكا</option>
     <option value="6.4">6.4 أشقر داكن نحاسي</option>
     <option value="6.6">6.6 أشقر داكن أحمر</option>
+    <option value="6.66">6.66 اشقر غامق رمادي بيج (intense)</option>
     <option value="6.7">6.7 أشقر داكن بنفسجي</option>
     <option value="6M">6M أشقر غامق مطفي</option>
 
     <option value="7.0">7.0 أشقر متوسط</option>
+    <option value="7.00">7.00</option>
+    <option value="7.003">7.003 أشقر متوسط مكثف دافئ</option>
+    <option value="7.01">7.01 اشقر رمادي متوسط</option>
     <option value="7.1">7.1 أشقر رمادي متوسط</option>
+    <option value="7.11">7.11 اشقر رمادي مكثف</option>
+    <option value="7.12">7.12 اشقر بیج داكن</option>
+    <option value="7.13">7.13 اشقر متوسط رمادي لؤلؤي</option>
     <option value="7.3">7.3 أشقر ذهبي متوسط</option>
+    <option value="7.23">7.23 اشقر بيج متوسط</option>
+    <option value="7.31">7.31 اشقر بیج</option>
+    <option value="7.35">7.35 اشقر موكا</option>
     <option value="7.4">7.4 أشقر متوسط نحاسي</option>
     <option value="7.6">7.6 أشقر متوسط أحمر</option>
     <option value="7.7">7.7 أشقر متوسط بنفسجي</option>
     <option value="7M">7M أشقر متوسط مطفي</option>
 
     <option value="8.0">8.0 أشقر فاتح</option>
+    <option value="8.00">8.00</option>
+    <option value="8.003">8.003 أشقر فاتح مكثف دافئ</option>
+    <option value="8.01">8.01 اشقر رمادي فاتح مكثف</option>
     <option value="8.1">8.1 أشقر رمادي فاتح</option>
+    <option value="8.11">8.11 اشقر رمادي فاتح مكثف</option>
+    <option value="8.12">8.12 اشقر فاتح رمادي لؤلؤي</option>
+    <option value="8.13">8.13 اشقر فاتح بيج لؤلؤي</option>
     <option value="8.3">8.3 أشقر ذهبي فاتح</option>
+    <option value="8.23">8.23 اشقر ذهبي بيج فاتح</option>
+    <option value="8.31">8.31 اشقر بيج فاتح</option>
+    <option value="8.35">8.35 اشقر فاتح موكا</option>
     <option value="8.4">8.4 أشقر فاتح نحاسي</option>
     <option value="8.6">8.6 أشقر فاتح أحمر</option>
     <option value="8.7">8.7 أشقر فاتح بنفسجي</option>
+    <option value="8.2">8.2 اشقر فاتح لافندر</option>
     <option value="8M">8M أشقر فاتح مطفي</option>
 
     <option value="9.0">9.0 أشقر فاتح جداً</option>
-    <option value="9.1">9.1 أشقر رمادي فاتح جداً</option>
-    <option value="9.3">9.3 أشقر ذهبي فاتح جداً</option>
-    <option value="9.7">9.7 أشقر فاتح جداً بنفسجي</option>
-    <option value="9M">9M أشقر فاتح جداً مطفي</option>
+    <option value="9.00">9.00</option>
+    <option value="9.003">9.003 أشقر فاتح جدا مكثف دافئ</option>
+    <option value="9.01">9.01 اشقر رمادي فاتح جدا</option>
+    <option value="9.1">9.1 أشقر رمادي فاتح جدا</option>
+    <option value="9.11">9.11 اشقر رمادي فاتح جدا مكثف</option>
+    <option value="9.12">9.12 اشقر بيج فاتح لؤلؤي</option>
+    <option value="9.13">9.13 اشقر فاتح جدا لؤلؤي</option>
+    <option value="9.3">9.3 أشقر ذهبي فاتح جدا</option>
+    <option value="9.7">9.7 أشقر فاتح جدا بنفسجي</option>
+    <option value="9M">9M أشقر فاتح جدا مطفي</option>
 
     <option value="10.0">10.0 أشقر بلاتيني</option>
+    <option value="10.00">10.00</option>
+    <option value="10.003">10.003 أشقر بلاتيني مكثف دافئ</option>
+    <option value="10.01">10.01 اشقر بلاتيني طبيعي رمادي</option>
     <option value="10.1">10.1 أشقر بلاتيني رمادي</option>
+    <option value="10.11">10.11 اشقر بلاتيني رمادي مكثف</option>
+    <option value="10.12">10.12 اشقر فاتح رمادي لؤلؤي</option>
+    <option value="10.13">10.13 اشقر بلاتيني بيج</option>
     <option value="10.3">10.3 أشقر بلاتيني ذهبي</option>
     <option value="10M">10M أشقر بلاتيني مطفي</option>
 
     <option value="12.0">12.0 أشقر طبيعي فاتح جداً</option>
+    <option value="12.01">12.01 اشقر طبيعي رمادي</option>
     <option value="12.11">12.11 أشقر بيج مطفي</option>
     <option value="12.111">12.111 أشقر رمادي بلاتيني</option>
+    <option value="12.12">12.12 اشقر رمادي لؤلؤي</option>
+    <option value="12.17">12.17 اشقر وردي</option>
+    <option value="12.19">12.19 اشقر فضي</option>
+    <option value="12.31">12.31 اشقر طبيعي رمادي</option>
+    <option value="12.32">12.32 اشقر بيج</option>
+    <option value="12.62">12.62 اشقر فضي</option>
     <option value="12.7">12.7 أشقر رملي بنفسجي</option>
+    <option value="12.71">12.71 اشقر لؤلؤي</option>
     <option value="12.75">12.75 أشقر بنفسجي ماهوجني</option>
   </select>
 
@@ -120,65 +195,138 @@
 
   <script>
     /***********************
-     * قاعدة بيانات شاملة *
+     * قاعدة بيانات مدمجة *
      * كل كود: {name, color HEX, neutralizes}
      ***********************/
     const catalogDB = {
       "1.0":   { name:"أسود مزرق", color:"#0b0f1a", neutralizes:"برتقالي/ذهبي" },
+      "1.7":   { name:"1.7 أسود", color:"#0f1112", neutralizes:"برتقالي" },
+
       "2.0":   { name:"2.0 أسود بني", color:"#1b1410", neutralizes:"برتقالي" },
+
       "3.0":   { name:"3.0 بني غامق", color:"#3b2a1a", neutralizes:"برتقالي" },
 
       "4.0":   { name:"4.0 بني متوسط", color:"#4b2e1f", neutralizes:"برتقالي" },
+      "4.00":  { name:"4.00", color:"#4b2e1f", neutralizes:"برتقالي" },
+      "4.003": { name:"4.003 كستنائي كثيف دافئ", color:"#5a3a2b", neutralizes:"بنفسجي" },
+      "4.01":  { name:"4.01 بني بارد", color:"#463a36", neutralizes:"برتقالي" },
       "4.1":   { name:"4.1 كستنائي رمادي (Ash)", color:"#4a3f36", neutralizes:"برتقالي" },
+      "4.11":  { name:"4.11 بني رمادي مكثف", color:"#423732", neutralizes:"برتقالي" },
+      "4.12":  { name:"4.12 كستنائي لؤلؤي", color:"#5b4b42", neutralizes:"برتقالي" },
+      "4.13":  { name:"4.13 بني بيج", color:"#6b4f3f", neutralizes:"برتقالي" },
       "4.3":   { name:"4.3 كستنائي ذهبي", color:"#7a4a2a", neutralizes:"أزرق" },
+      "4.17":  { name:"4.17 رمادي بيج", color:"#6a5a4f", neutralizes:"برتقالي" },
       "4.4":   { name:"4.4 كستنائي نحاسي", color:"#8b3b1f", neutralizes:"أزرق" },
+      "4.31":  { name:"4.31 كستنائي بيج بندقي", color:"#5a3f36", neutralizes:"برتقالي" },
+      "4.35":  { name:"4.35 موكا", color:"#4f3a33", neutralizes:"برتقالي" },
 
       "5.0":   { name:"5.0 بني فاتح", color:"#7b4f2f", neutralizes:"برتقالي" },
+      "5.00":  { name:"5.00", color:"#7b4f2f", neutralizes:"برتقالي" },
+      "5.003": { name:"5.003 بني فاتح مكثف دافئ", color:"#a67c52", neutralizes:"بنفسجي" },
+      "5.01":  { name:"5.01 بني فاتح مكثف", color:"#8b5a3a", neutralizes:"برتقالي" },
       "5.1":   { name:"5.1 كستنائي فاتح رمادي", color:"#6a5c4f", neutralizes:"برتقالي" },
+      "5.11":  { name:"5.11 بني فاتح مكثف رمادي", color:"#6b5b52", neutralizes:"برتقالي" },
+      "5.12":  { name:"5.12 بني فاتح رمادي لؤلؤي", color:"#7b6b5f", neutralizes:"برتقالي" },
+      "5.13":  { name:"5.13 بني فاتح بيج لؤلؤي", color:"#8b7b6f", neutralizes:"برتقالي" },
       "5.3":   { name:"5.3 بني ذهبي فاتح", color:"#9c6b3f", neutralizes:"بنفسجي" },
+      "5.23":  { name:"5.23 بني فاتح", color:"#9a6a3e", neutralizes:"بنفسجي" },
+      "5.31":  { name:"5.31 كستنائي فاتح بندقي", color:"#8a5b44", neutralizes:"برتقالي" },
       "5.4":   { name:"5.4 بني فاتح نحاسي", color:"#b45f3c", neutralizes:"أزرق" },
+      "5.6":   { name:"5.6 (red family)", color:"#9b2f2f", neutralizes:"أخضر" },
       "5.7":   { name:"5.7 بني فاتح بنفسجي", color:"#6a0dad", neutralizes:"أصفر" },
+      "5.8":   { name:"5.8 كستنائي بيج", color:"#7b6a5a", neutralizes:"برتقالي" },
+      "55.65": { name:"55.65 احمر توتي بني فاتح", color:"#8b2b3b", neutralizes:"أخضر" },
+      "55.66": { name:"55.66 احمر فاتح كريز", color:"#b32b3b", neutralizes:"أخضر" },
       "5M":    { name:"5M بني فاتح مطفي", color:"#6e4b3a", neutralizes:"دفء/ذهبي" },
 
       "6.0":   { name:"6.0 أشقر غامق", color:"#c49a6c", neutralizes:"برتقالي/ذهبي" },
+      "6.00":  { name:"6.00", color:"#c49a6c", neutralizes:"برتقالي/ذهبي" },
+      "6.003": { name:"6.003 أشقر غامق مكثف دافئ", color:"#d2a679", neutralizes:"بنفسجي" },
+      "6.01":  { name:"6.01 اشقر رمادي غامق", color:"#8c7b6f", neutralizes:"برتقالي" },
       "6.1":   { name:"6.1 أشقر رمادي غامق", color:"#8c7b6f", neutralizes:"برتقالي" },
+      "6.11":  { name:"6.11 اشقر رمادي داكن مكثف", color:"#7b6b63", neutralizes:"برتقالي" },
+      "6.12":  { name:"6.12 بني بيج فاتح", color:"#b89a7f", neutralizes:"برتقالي" },
+      "6.13":  { name:"6.13 اشقر غامق رمادي لؤلؤي", color:"#a89a90", neutralizes:"برتقالي" },
       "6.3":   { name:"6.3 أشقر ذهبي داكن", color:"#c49a6c", neutralizes:"أزرق" },
+      "6.23":  { name:"6.23 اشقر بيج ذهبي داكن", color:"#c49a6c", neutralizes:"أزرق" },
+      "6.31":  { name:"6.31 اشقر داكن بندقي", color:"#8b6a55", neutralizes:"برتقالي" },
+      "6.35":  { name:"6.35 اشقر غامق موكا", color:"#7b5a48", neutralizes:"برتقالي" },
       "6.4":   { name:"6.4 أشقر داكن نحاسي", color:"#d46a3a", neutralizes:"أزرق" },
       "6.6":   { name:"6.6 أشقر داكن أحمر", color:"#a83232", neutralizes:"أخضر" },
+      "6.66":  { name:"6.66 اشقر غامق رمادي بيج", color:"#9b7b6b", neutralizes:"برتقالي" },
       "6.7":   { name:"6.7 أشقر داكن بنفسجي", color:"#7b1fa2", neutralizes:"أصفر" },
       "6M":    { name:"6M أشقر غامق مطفي", color:"#8c6f56", neutralizes:"دفء/ذهبي" },
 
       "7.0":   { name:"7.0 أشقر متوسط", color:"#d9b37d", neutralizes:"برتقالي/ذهبي" },
+      "7.00":  { name:"7.00", color:"#d9b37d", neutralizes:"برتقالي/ذهبي" },
+      "7.003": { name:"7.003 أشقر متوسط مكثف دافئ", color:"#e0b97a", neutralizes:"بنفسجي" },
+      "7.01":  { name:"7.01 اشقر رمادي متوسط", color:"#a89c90", neutralizes:"برتقالي" },
       "7.1":   { name:"7.1 أشقر رمادي متوسط", color:"#a89c90", neutralizes:"برتقالي" },
+      "7.11":  { name:"7.11 اشقر رمادي مكثف", color:"#9b8b80", neutralizes:"برتقالي" },
+      "7.12":  { name:"7.12 اشقر بیج داكن", color:"#b89a7f", neutralizes:"برتقالي" },
+      "7.13":  { name:"7.13 اشقر متوسط رمادي لؤلؤي", color:"#b8a89a", neutralizes:"برتقالي" },
       "7.3":   { name:"7.3 أشقر ذهبي متوسط", color:"#d9b37d", neutralizes:"أزرق" },
+      "7.23":  { name:"7.23 اشقر بيج متوسط", color:"#d0b07a", neutralizes:"أزرق" },
+      "7.31":  { name:"7.31 اشقر بیج", color:"#c9a67a", neutralizes:"أزرق" },
+      "7.35":  { name:"7.35 اشقر موكا", color:"#b78a6a", neutralizes:"برتقالي" },
       "7.4":   { name:"7.4 أشقر متوسط نحاسي", color:"#e07b3c", neutralizes:"أزرق" },
       "7.6":   { name:"7.6 أشقر متوسط أحمر", color:"#c0392b", neutralizes:"أخضر" },
       "7.7":   { name:"7.7 أشقر متوسط بنفسجي", color:"#8e24aa", neutralizes:"أصفر" },
       "7M":    { name:"7M أشقر متوسط مطفي", color:"#a68b73", neutralizes:"دفء/ذهبي" },
 
       "8.0":   { name:"8.0 أشقر فاتح", color:"#f0d9a6", neutralizes:"برتقالي/ذهبي" },
+      "8.00":  { name:"8.00", color:"#f0d9a6", neutralizes:"برتقالي/ذهبي" },
+      "8.003": { name:"8.003 أشقر فاتح مكثف دافئ", color:"#f2d7a0", neutralizes:"بنفسجي" },
+      "8.01":  { name:"8.01 اشقر رمادي فاتح مكثف", color:"#d0c4b6", neutralizes:"برتقالي" },
       "8.1":   { name:"8.1 أشقر رمادي فاتح", color:"#c8bfb5", neutralizes:"برتقالي" },
+      "8.11":  { name:"8.11 اشقر رمادي فاتح مكثف", color:"#c0b6ad", neutralizes:"برتقالي" },
+      "8.12":  { name:"8.12 اشقر فاتح رمادي لؤلؤي", color:"#d8cfc6", neutralizes:"برتقالي" },
+      "8.13":  { name:"8.13 اشقر فاتح بيج لؤلؤي", color:"#e0d6c9", neutralizes:"برتقالي" },
       "8.3":   { name:"8.3 أشقر ذهبي فاتح", color:"#f0d9a6", neutralizes:"أزرق" },
+      "8.23":  { name:"8.23 اشقر ذهبي بيج فاتح", color:"#f1d9b0", neutralizes:"أزرق" },
+      "8.31":  { name:"8.31 اشقر بيج فاتح", color:"#efd8b2", neutralizes:"أزرق" },
+      "8.35":  { name:"8.35 اشقر فاتح موكا", color:"#e0c6a8", neutralizes:"برتقالي" },
       "8.4":   { name:"8.4 أشقر فاتح نحاسي", color:"#f08c4a", neutralizes:"أزرق" },
       "8.6":   { name:"8.6 أشقر فاتح أحمر", color:"#e74c3c", neutralizes:"أخضر" },
       "8.7":   { name:"8.7 أشقر فاتح بنفسجي", color:"#9c27b0", neutralizes:"أصفر" },
+      "8.2":   { name:"8.2 اشقر فاتح لافندر", color:"#bfa0c9", neutralizes:"أصفر" },
       "8M":    { name:"8M أشقر فاتح مطفي", color:"#c2a98f", neutralizes:"دفء/ذهبي" },
 
       "9.0":   { name:"9.0 أشقر فاتح جداً", color:"#f7e7c6", neutralizes:"أصفر/ذهبي" },
-      "9.1":   { name:"9.1 أشقر رمادي فاتح جداً", color:"#e0d9d0", neutralizes:"ذهبي/أصفر" },
-      "9.3":   { name:"9.3 أشقر ذهبي فاتح جداً", color:"#f7e7c6", neutralizes:"أزرق" },
-      "9.7":   { name:"9.7 أشقر فاتح جداً بنفسجي", color:"#ba68c8", neutralizes:"أصفر" },
-      "9M":    { name:"9M أشقر فاتح جداً مطفي", color:"#e0cbb0", neutralizes:"دفء/ذهبي" },
+      "9.00":  { name:"9.00", color:"#f7e7c6", neutralizes:"أصفر/ذهبي" },
+      "9.003": { name:"9.003 أشقر فاتح جدا مكثف دافئ", color:"#f9e9c9", neutralizes:"بنفسجي" },
+      "9.01":  { name:"9.01 اشقر رمادي فاتح جدا", color:"#e8e0d6", neutralizes:"ذهبي" },
+      "9.1":   { name:"9.1 أشقر رمادي فاتح جدا", color:"#e0d9d0", neutralizes:"ذهبي/أصفر" },
+      "9.11":  { name:"9.11 اشقر رمادي فاتح جدا مكثف", color:"#d8d1c8", neutralizes:"ذهبي" },
+      "9.12":  { name:"9.12 اشقر بيج فاتح لؤلؤي", color:"#efe6d8", neutralizes:"ذهبي" },
+      "9.13":  { name:"9.13 اشقر فاتح جدا لؤلؤي", color:"#f3eadc", neutralizes:"ذهبي" },
+      "9.3":   { name:"9.3 أشقر ذهبي فاتح جدا", color:"#f7e7c6", neutralizes:"أزرق" },
+      "9.7":   { name:"9.7 أشقر فاتح جدا بنفسجي", color:"#ba68c8", neutralizes:"أصفر" },
+      "9M":    { name:"9M أشقر فاتح جدا مطفي", color:"#e0cbb0", neutralizes:"دفء/ذهبي" },
 
       "10.0":  { name:"10.0 أشقر بلاتيني", color:"#f9f5e3", neutralizes:"برتقالي/ذهبي" },
+      "10.00": { name:"10.00", color:"#f9f5e3", neutralizes:"برتقالي/ذهبي" },
+      "10.003":{ name:"10.003 أشقر بلاتيني مكثف دافئ", color:"#faf6e8", neutralizes:"بنفسجي" },
+      "10.01": { name:"10.01 اشقر بلاتيني طبيعي رمادي", color:"#f2efe9", neutralizes:"برتقالي" },
       "10.1":  { name:"10.1 أشقر بلاتيني رمادي", color:"#f0edea", neutralizes:"برتقالي" },
+      "10.11": { name:"10.11 اشقر بلاتيني رمادي مكثف", color:"#ece9e4", neutralizes:"برتقالي" },
+      "10.12": { name:"10.12 اشقر فاتح رمادي لؤلؤي", color:"#efeef0", neutralizes:"برتقالي" },
+      "10.13": { name:"10.13 اشقر بلاتيني بيج", color:"#f4efe6", neutralizes:"برتقالي" },
       "10.3":  { name:"10.3 أشقر بلاتيني ذهبي", color:"#faf6e8", neutralizes:"أزرق" },
       "10M":   { name:"10M أشقر بلاتيني مطفي", color:"#f2e6d8", neutralizes:"دفء/ذهبي" },
 
       "12.0":  { name:"12.0 أشقر طبيعي فاتح جداً", color:"#fbf7ea", neutralizes:"ذهبي/أصفر" },
+      "12.01": { name:"12.01 اشقر طبيعي رمادي", color:"#f6f2ea", neutralizes:"ذهبي" },
       "12.11": { name:"12.11 أشقر بيج مطفي", color:"#f0e6d2", neutralizes:"ذهبي/أصفر" },
       "12.111":{ name:"12.111 أشقر رمادي بلاتيني", color:"#e6e6e6", neutralizes:"ذهبي/أصفر" },
+      "12.12": { name:"12.12 اشقر رمادي لؤلؤي", color:"#e8e6e6", neutralizes:"ذهبي" },
+      "12.17": { name:"12.17 اشقر وردي", color:"#f4dbe6", neutralizes:"أصفر" },
+      "12.19": { name:"12.19 اشقر فضي", color:"#e8eef2", neutralizes:"أصفر" },
+      "12.31": { name:"12.31 اشقر طبيعي رمادي", color:"#f7f3ec", neutralizes:"ذهبي" },
+      "12.32": { name:"12.32 اشقر بيج", color:"#f6ead6", neutralizes:"ذهبي" },
+      "12.62": { name:"12.62 اشقر فضي", color:"#e6eef2", neutralizes:"أصفر" },
       "12.7":  { name:"12.7 أشقر رملي بنفسجي", color:"#d8bfd8", neutralizes:"أصفر" },
+      "12.71": { name:"12.71 اشقر لؤلؤي", color:"#efeef6", neutralizes:"أصفر" },
       "12.75": { name:"12.75 أشقر بنفسجي ماهوجني", color:"#b565a7", neutralizes:"أصفر/ذهبي" }
     };
 
@@ -204,14 +352,8 @@
     // إيجاد لون تمثيلي لأقرب مستوى متاح في القاعدة
     function findRepresentativeColorForLevel(level) {
       if(!level) return null;
-      // نبحث أولاً عن كود .0 ثم .1 ثم أي كود يبدأ بالمستوى
       const keys = Object.keys(catalogDB);
-      const preferOrder = [".0", ".1", ".3", ".4", ".6", ".7", "M"];
-      for (let suf of preferOrder) {
-        const key = keys.find(k => k.startsWith(level + (suf === "M" ? "" : "")) && (suf === "M" ? k.endsWith("M") : k.includes(suf)));
-        if(key) return catalogDB[key].color;
-      }
-      // fallback: أي كود يبدأ بالمستوى
+      // نبحث عن أول كود يبدأ بالمستوى
       const anyKey = keys.find(k => k.startsWith(String(level)));
       return anyKey ? catalogDB[anyKey].color : null;
     }
@@ -237,7 +379,6 @@
       let needBleach = false;
       let notes = "";
 
-      // إذا الأساس داكن جداً (1-3) والهدف فاتح (>=6) => أقصى رفع افتراضي درجتين
       if(baseLevel <= 3 && targetLevel && targetLevel >= 6) {
         const maxLiftWithoutBleach = baseLevel + 2;
         if(targetLevel > maxLiftWithoutBleach) {
@@ -247,7 +388,6 @@
         }
       }
 
-      // حالة خاصة: أساس أسود (1) + هدف 6-9 => عادة نتيجة غامقة/دافئة ما لم تفتيح
       if(baseLevel === 1 && targetLevel && targetLevel >=6 && targetLevel <=9 && !needBleach) {
         notes += "<div class='note'>ملاحظة: عند البدء من أسود طبيعي، حتى لو اخترت درجة 6-9، النتيجة العملية ستكون أغمق/دافئة ما لم تقم بتفتيح فعلي.</div>";
       }
