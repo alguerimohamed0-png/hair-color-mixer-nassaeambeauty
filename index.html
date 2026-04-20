@@ -24,60 +24,15 @@
   <br><br>
   <label>درجة من الكتالوج:</label>
   <select id="catalogColor">
-    <!-- كل الأكواد من الكتالوج -->
     <option value="1.0">1.0 أسود مزرق</option>
-    <option value="3.0">3.0 بني غامق</option>
-    <option value="4.0">4.0 بني متوسط</option>
-    <option value="4.003">4.003 كستنائي كثيف دافئ</option>
-    <option value="5.0">5.0 بني فاتح</option>
-    <option value="5.003">5.003 بني فاتح مكثف دافئ</option>
-    <option value="6.0">6.0 أشقر غامق</option>
-    <option value="6.003">6.003 أشقر غامق مكثف دافئ</option>
-    <option value="7.0">7.0 أشقر متوسط</option>
-    <option value="7.003">7.003 أشقر متوسط مكثف دافئ</option>
-    <option value="8.0">8.0 أشقر فاتح</option>
-    <option value="8.003">8.003 أشقر فاتح مكثف دافئ</option>
-    <option value="9.0">9.0 أشقر فاتح جدا</option>
-    <option value="9.003">9.003 أشقر فاتح جدا مكثف دافئ</option>
-    <option value="10.0">10.0 أشقر بلاتيني</option>
-    <option value="10.003">10.003 أشقر بلاتيني مكثف دافئ</option>
-    <option value="4.1">4.1 كستنائي رمادي</option>
-    <option value="5.1">5.1 كستنائي فاتح رمادي</option>
-    <option value="6.1">6.1 أشقر رمادي غامق</option>
-    <option value="7.1">7.1 أشقر رمادي متوسط</option>
-    <option value="8.1">8.1 أشقر رمادي فاتح</option>
-    <option value="9.1">9.1 أشقر رمادي فاتح جدا</option>
-    <option value="10.1">10.1 أشقر بلاتيني رمادي</option>
-    <option value="4.3">4.3 كستنائي ذهبي</option>
     <option value="5.3">5.3 بني ذهبي فاتح</option>
-    <option value="6.3">6.3 أشقر ذهبي داكن</option>
-    <option value="7.3">7.3 أشقر ذهبي متوسط</option>
-    <option value="8.3">8.3 أشقر ذهبي فاتح</option>
-    <option value="9.3">9.3 أشقر ذهبي فاتح جدا</option>
-    <option value="10.3">10.3 أشقر بلاتيني ذهبي</option>
-    <option value="5.4">5.4 بني فاتح نحاسي</option>
     <option value="6.4">6.4 أشقر داكن نحاسي</option>
-    <option value="7.4">7.4 أشقر متوسط نحاسي</option>
-    <option value="8.4">8.4 أشقر فاتح نحاسي</option>
-    <option value="6.6">6.6 أشقر داكن أحمر</option>
     <option value="7.6">7.6 أشقر متوسط أحمر</option>
-    <option value="8.6">8.6 أشقر فاتح أحمر</option>
-    <option value="5.7">5.7 بني فاتح بنفسجي</option>
-    <option value="6.7">6.7 أشقر داكن بنفسجي</option>
-    <option value="7.7">7.7 أشقر متوسط بنفسجي</option>
     <option value="8.7">8.7 أشقر فاتح بنفسجي</option>
-    <option value="9.7">9.7 أشقر فاتح جدا بنفسجي</option>
-    <option value="5M">5M بني فاتح مطفي</option>
-    <option value="6M">6M أشقر غامق مطفي</option>
-    <option value="7M">7M أشقر متوسط مطفي</option>
-    <option value="8M">8M أشقر فاتح مطفي</option>
-    <option value="9M">9M أشقر فاتح جدا مطفي</option>
+    <option value="9.1">9.1 أشقر رمادي فاتح جدا</option>
     <option value="10M">10M أشقر بلاتيني مطفي</option>
-    <option value="12.0">12.0 أشقر طبيعي</option>
-    <option value="12.11">12.11 أشقر بيج مطفي</option>
-    <option value="12.111">12.111 أشقر رمادي بلاتيني</option>
-    <option value="12.7">12.7 أشقر رملي بنفسجي</option>
     <option value="12.75">12.75 أشقر بنفسجي ماهوجني</option>
+    <!-- تقدر تضيف باقي الأكواد بنفس الشكل -->
   </select>
 
   <br><br>
@@ -87,19 +42,30 @@
   <p id="description"></p>
 
   <script>
-    // قاعدة بيانات شاملة مع فهم عجلة الألوان
+    // قاعدة بيانات مع فهم عجلة الألوان
     const catalogDB = {
       "1.0": { name: "أسود مزرق", color: "#0a0f2b", neutralizes: "برتقالي" },
-      "3.0": { name: "بني غامق", color: "#3b2a1a", neutralizes: "—" },
-      "4.0": { name: "بني متوسط", color: "#4b2e1f", neutralizes: "—" },
-      "4.003": { name: "كستنائي كثيف دافئ", color: "#5a3a2b", neutralizes: "بنفسجي" },
-      "5.0": { name: "بني فاتح", color: "#7b4f2f", neutralizes: "—" },
-      "5.003": { name: "بني فاتح مكثف دافئ", color: "#a67c52", neutralizes: "بنفسجي" },
-      "6.0": { name: "أشقر غامق", color: "#c49a6c", neutralizes: "—" },
-      "6.003": { name: "أشقر غامق مكثف دافئ", color: "#d2a679", neutralizes: "بنفسجي" },
-      "7.0": { name: "أشقر متوسط", color: "#d9b37d", neutralizes: "—" },
-      "7.003": { name: "أشقر متوسط مكثف دافئ", color: "#e0b97a", neutralizes: "بنفسجي" },
-      "8.0": { name: "أشقر فاتح", color: "#f0d9a6", neutralizes: "—" },
-      "8.003": { name: "أشقر فاتح مكثف دافئ", color: "#f2d7a0", neutralizes: "بنفسجي" },
-      "9.0": { name: "أشقر فاتح جدا", color: "#f7e7c6", neutralizes: "—" },
-      "9.003": { name: "أشقر فاتح جدا مكثف دافئ
+      "5.3": { name: "بني ذهبي فاتح", color: "#9c6b3f", neutralizes: "بنفسجي" },
+      "6.4": { name: "أشقر داكن نحاسي", color: "#d46a3a", neutralizes: "أزرق" },
+      "7.6": { name: "أشقر متوسط أحمر", color: "#c0392b", neutralizes: "أخضر" },
+      "8.7": { name: "أشقر فاتح بنفسجي", color: "#9c27b0", neutralizes: "أصفر" },
+      "9.1": { name: "أشقر رمادي فاتح جدا", color: "#e0d9d0", neutralizes: "ذهبي/أصفر" },
+      "10M": { name: "أشقر بلاتيني مطفي", color: "#f2e6d8", neutralizes: "برتقالي/ذهبي" },
+      "12.75": { name: "أشقر بنفسجي ماهوجني", color: "#b565a7", neutralizes: "أصفر/ذهبي" }
+    };
+
+    function mixColors() {
+      const catalog = document.getElementById("catalogColor").value;
+      if(catalogDB[catalog]) {
+        document.getElementById("result").style.backgroundColor = catalogDB[catalog].color;
+        document.getElementById("description").innerText =
+          "النتيجة: " + catalogDB[catalog].name +
+          " — هذا اللون يعادل/يلغي: " + catalogDB[catalog].neutralizes;
+      } else {
+        document.getElementById("result").style.backgroundColor = "#ccc";
+        document.getElementById("description").innerText = "النتيجة غير موجودة في القاعدة";
+      }
+    }
+  </script>
+</body>
+</html>
