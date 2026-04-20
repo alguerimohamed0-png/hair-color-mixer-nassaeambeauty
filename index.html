@@ -24,14 +24,22 @@
   <br><br>
   <label>درجة من الكتالوج:</label>
   <select id="catalogColor">
+    <!-- كل الأكواد من الكتالوج -->
     <option value="1.0">1.0 أسود مزرق</option>
     <option value="3.0">3.0 بني غامق</option>
+    <option value="4.0">4.0 بني متوسط</option>
     <option value="4.003">4.003 كستنائي كثيف دافئ</option>
+    <option value="5.0">5.0 بني فاتح</option>
     <option value="5.003">5.003 بني فاتح مكثف دافئ</option>
+    <option value="6.0">6.0 أشقر غامق</option>
     <option value="6.003">6.003 أشقر غامق مكثف دافئ</option>
+    <option value="7.0">7.0 أشقر متوسط</option>
     <option value="7.003">7.003 أشقر متوسط مكثف دافئ</option>
+    <option value="8.0">8.0 أشقر فاتح</option>
     <option value="8.003">8.003 أشقر فاتح مكثف دافئ</option>
+    <option value="9.0">9.0 أشقر فاتح جدا</option>
     <option value="9.003">9.003 أشقر فاتح جدا مكثف دافئ</option>
+    <option value="10.0">10.0 أشقر بلاتيني</option>
     <option value="10.003">10.003 أشقر بلاتيني مكثف دافئ</option>
     <option value="4.1">4.1 كستنائي رمادي</option>
     <option value="5.1">5.1 كستنائي فاتح رمادي</option>
@@ -47,7 +55,6 @@
     <option value="8.3">8.3 أشقر ذهبي فاتح</option>
     <option value="9.3">9.3 أشقر ذهبي فاتح جدا</option>
     <option value="10.3">10.3 أشقر بلاتيني ذهبي</option>
-    <option value="4.4">4.4 كستنائي نحاسي</option>
     <option value="5.4">5.4 بني فاتح نحاسي</option>
     <option value="6.4">6.4 أشقر داكن نحاسي</option>
     <option value="7.4">7.4 أشقر متوسط نحاسي</option>
@@ -80,26 +87,19 @@
   <p id="description"></p>
 
   <script>
+    // قاعدة بيانات شاملة مع فهم عجلة الألوان
     const catalogDB = {
-      "1.0": { name: "أسود مزرق", color: "#0a0f2b" },
-      "3.0": { name: "بني غامق", color: "#3b2a1a" },
-      "4.003": { name: "كستنائي كثيف دافئ", color: "#5a3a2b" },
-      "5.003": { name: "بني فاتح مكثف دافئ", color: "#a67c52" },
-      "6.003": { name: "أشقر غامق مكثف دافئ", color: "#d2a679" },
-      "7.003": { name: "أشقر متوسط مكثف دافئ", color: "#d9b37d" },
-      "8.003": { name: "أشقر فاتح مكثف دافئ", color: "#f0d9a6" },
-      "9.003": { name: "أشقر فاتح جدا مكثف دافئ", color: "#f7e7c6" },
-      "10.003": { name: "أشقر بلاتيني مكثف دافئ", color: "#f9f5e3" },
-      "4.1": { name: "كستنائي رمادي", color: "#4b3f35" },
-      "5.1": { name: "كستنائي فاتح رمادي", color: "#6a5c4f" },
-      "6.1": { name: "أشقر رمادي غامق", color: "#8c7b6f" },
-      "7.1": { name: "أشقر رمادي متوسط", color: "#a89c90" },
-      "8.1": { name: "أشقر رمادي فاتح", color: "#c8bfb5" },
-      "9.1": { name: "أشقر رمادي فاتح جدا", color: "#e0d9d0" },
-      "10.1": { name: "أشقر بلاتيني رمادي", color: "#f0edea" },
-      "4.3": { name: "كستنائي ذهبي", color: "#7a4a2a" },
-      "5.3": { name: "بني ذهبي فاتح", color: "#9c6b3f" },
-      "6.3": { name: "أشقر ذهبي داكن", color: "#c49a6c" },
-      "7.3": { name: "أشقر ذهبي متوسط", color: "#d9b37d" },
-      "8.3": { name: "أشقر ذهبي فاتح", color: "#f0d9a6" },
-      "9.3": { name: "أشقر ذهبي فاتح جدا", color: "#f7
+      "1.0": { name: "أسود مزرق", color: "#0a0f2b", neutralizes: "برتقالي" },
+      "3.0": { name: "بني غامق", color: "#3b2a1a", neutralizes: "—" },
+      "4.0": { name: "بني متوسط", color: "#4b2e1f", neutralizes: "—" },
+      "4.003": { name: "كستنائي كثيف دافئ", color: "#5a3a2b", neutralizes: "بنفسجي" },
+      "5.0": { name: "بني فاتح", color: "#7b4f2f", neutralizes: "—" },
+      "5.003": { name: "بني فاتح مكثف دافئ", color: "#a67c52", neutralizes: "بنفسجي" },
+      "6.0": { name: "أشقر غامق", color: "#c49a6c", neutralizes: "—" },
+      "6.003": { name: "أشقر غامق مكثف دافئ", color: "#d2a679", neutralizes: "بنفسجي" },
+      "7.0": { name: "أشقر متوسط", color: "#d9b37d", neutralizes: "—" },
+      "7.003": { name: "أشقر متوسط مكثف دافئ", color: "#e0b97a", neutralizes: "بنفسجي" },
+      "8.0": { name: "أشقر فاتح", color: "#f0d9a6", neutralizes: "—" },
+      "8.003": { name: "أشقر فاتح مكثف دافئ", color: "#f2d7a0", neutralizes: "بنفسجي" },
+      "9.0": { name: "أشقر فاتح جدا", color: "#f7e7c6", neutralizes: "—" },
+      "9.003": { name: "أشقر فاتح جدا مكثف دافئ
