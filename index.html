@@ -1,71 +1,263 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>أداة خلط الصبغات</title>
+  <meta charset="utf-8" />
+  <title>أداة خلط الصبغات - كامل</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    body { font-family: Tahoma; text-align: center; background: #fdfdfd; }
-    h2 { color: #444; }
-    label { font-weight: bold; }
-    .color-box { width: 120px; height: 120px; margin: 20px auto; border: 1px solid #000; }
-    select, button { margin: 10px; padding: 5px; }
+    body { font-family: Tahoma, Arial, sans-serif; direction: rtl; text-align: center; background:#fafafa; color:#222; padding:20px; }
+    h2 { margin-top:0; color:#333; }
+    label { display:block; margin:8px 0 4px; font-weight:700; }
+    select, button { padding:8px 10px; font-size:14px; margin:6px; }
+    .color-box { width:160px; height:160px; margin:18px auto; border-radius:6px; border:1px solid #bbb; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+    .info { max-width:760px; margin:12px auto; text-align:right; background:#fff; padding:12px; border-radius:6px; border:1px solid #eee; }
+    .note { color:#555; font-size:13px; margin-top:8px; }
+    .warning { color:#b33; font-weight:700; }
+    table { margin:10px auto; border-collapse:collapse; font-size:13px; }
+    td, th { padding:6px 8px; border:1px solid #eee; }
+    .small { font-size:12px; color:#666; }
   </style>
 </head>
 <body>
-  <h2>اختيار لون الصبغة</h2>
+  <h2>أداة خلط الصبغات مع فهم عجلة الألوان</h2>
 
-  <label>لون الشعر الحالي:</label>
+  <label>**لون الشعر الحالي**</label>
   <select id="baseColor">
-    <option value="black">أسود</option>
-    <option value="brown-medium">بني متوسط</option>
-    <option value="brown-light">بني فاتح</option>
+    <option value="1">أسود طبيعي (مستوى 1-2)</option>
+    <option value="4">بني غامق (مستوى 3-4)</option>
+    <option value="5">بني متوسط (مستوى 5)</option>
+    <option value="6">بني فاتح / أشقر غامق (مستوى 6)</option>
+    <option value="7">أشقر متوسط (مستوى 7)</option>
+    <option value="8">أشقر فاتح (مستوى 8)</option>
+    <option value="9">أشقر فاتح جداً (مستوى 9)</option>
+    <option value="10">أشقر بلاتيني (مستوى 10+)</option>
   </select>
 
-  <br><br>
-  <label>درجة من الكتالوج:</label>
+  <label>**درجة من الكتالوج**</label>
   <select id="catalogColor">
+    <!-- شاملة وممثلة: أضفت نطاق واسع من الأكواد الشائعة -->
     <option value="1.0">1.0 أسود مزرق</option>
+    <option value="2.0">2.0 أسود بني</option>
+    <option value="3.0">3.0 بني غامق</option>
+    <option value="4.0">4.0 بني متوسط</option>
+    <option value="4.1">4.1 كستنائي رمادي (Ash)</option>
+    <option value="4.3">4.3 كستنائي ذهبي</option>
+    <option value="4.4">4.4 كستنائي نحاسي</option>
+    <option value="5.0">5.0 بني فاتح</option>
+    <option value="5.1">5.1 كستنائي فاتح رمادي</option>
     <option value="5.3">5.3 بني ذهبي فاتح</option>
+    <option value="5.4">5.4 بني فاتح نحاسي</option>
+    <option value="5.7">5.7 بني فاتح بنفسجي</option>
+    <option value="5M">5M بني فاتح مطفي</option>
+    <option value="6.0">6.0 أشقر غامق</option>
+    <option value="6.1">6.1 أشقر رمادي غامق</option>
+    <option value="6.3">6.3 أشقر ذهبي داكن</option>
     <option value="6.4">6.4 أشقر داكن نحاسي</option>
+    <option value="6.6">6.6 أشقر داكن أحمر</option>
+    <option value="6.7">6.7 أشقر داكن بنفسجي</option>
+    <option value="6M">6M أشقر غامق مطفي</option>
+    <option value="7.0">7.0 أشقر متوسط</option>
+    <option value="7.1">7.1 أشقر رمادي متوسط</option>
+    <option value="7.3">7.3 أشقر ذهبي متوسط</option>
+    <option value="7.4">7.4 أشقر متوسط نحاسي</option>
     <option value="7.6">7.6 أشقر متوسط أحمر</option>
+    <option value="7.7">7.7 أشقر متوسط بنفسجي</option>
+    <option value="7M">7M أشقر متوسط مطفي</option>
+    <option value="8.0">8.0 أشقر فاتح</option>
+    <option value="8.1">8.1 أشقر رمادي فاتح</option>
+    <option value="8.3">8.3 أشقر ذهبي فاتح</option>
+    <option value="8.4">8.4 أشقر فاتح نحاسي</option>
+    <option value="8.6">8.6 أشقر فاتح أحمر</option>
     <option value="8.7">8.7 أشقر فاتح بنفسجي</option>
-    <option value="9.1">9.1 أشقر رمادي فاتح جدا</option>
+    <option value="8M">8M أشقر فاتح مطفي</option>
+    <option value="9.0">9.0 أشقر فاتح جداً</option>
+    <option value="9.1">9.1 أشقر رمادي فاتح جداً</option>
+    <option value="9.3">9.3 أشقر ذهبي فاتح جداً</option>
+    <option value="9.7">9.7 أشقر فاتح جداً بنفسجي</option>
+    <option value="9M">9M أشقر فاتح جداً مطفي</option>
+    <option value="10.0">10.0 أشقر بلاتيني</option>
+    <option value="10.1">10.1 أشقر بلاتيني رمادي</option>
+    <option value="10.3">10.3 أشقر بلاتيني ذهبي</option>
     <option value="10M">10M أشقر بلاتيني مطفي</option>
+    <option value="12.0">12.0 أشقر طبيعي فاتح جداً</option>
+    <option value="12.11">12.11 أشقر بيج مطفي</option>
+    <option value="12.111">12.111 أشقر رمادي بلاتيني</option>
+    <option value="12.7">12.7 أشقر رملي بنفسجي</option>
     <option value="12.75">12.75 أشقر بنفسجي ماهوجني</option>
-    <!-- تقدر تضيف باقي الأكواد بنفس الشكل -->
   </select>
 
-  <br><br>
+  <br>
   <button onclick="mixColors()">عرض النتيجة</button>
 
-  <div id="result" class="color-box"></div>
-  <p id="description"></p>
+  <div id="result" class="color-box" aria-hidden="true"></div>
+
+  <div class="info" id="description" role="status" aria-live="polite">
+    اختر لوناً ثم اضغط عرض النتيجة.
+  </div>
+
+  <div class="note small">
+    **مبدأ عجلة الألوان المستخدم هنا:**  
+    - **الأزرق / الرمادي (Ash)** يلغي البرتقالي/الدفء الزائد.  
+    - **البنفسجي (Violet)** يلغي الأصفر.  
+    - **الأخضر** يلغي الأحمر.  
+    - **المات/المطفّي (Mat/M)** يقلل الدفء ويطفي اللمعان الذهبي/برتقالي.  
+    الأداة تعرض اللون التقريبي، وتعرض أيضاً أي **تونر/مقوّم لون** يُنصح به لتصحيح أي انحراف لوني.
+  </div>
 
   <script>
-    // قاعدة بيانات مع فهم عجلة الألوان
+    /***********************
+     * قاعدة بيانات كاملة *
+     * كل كود: {name, color HEX, neutralizes}
+     * neutralizes = اللون الذي يلغيه هذا الكود (ما يجب معادلته)
+     ***********************/
     const catalogDB = {
-      "1.0": { name: "أسود مزرق", color: "#0a0f2b", neutralizes: "برتقالي" },
-      "5.3": { name: "بني ذهبي فاتح", color: "#9c6b3f", neutralizes: "بنفسجي" },
-      "6.4": { name: "أشقر داكن نحاسي", color: "#d46a3a", neutralizes: "أزرق" },
-      "7.6": { name: "أشقر متوسط أحمر", color: "#c0392b", neutralizes: "أخضر" },
-      "8.7": { name: "أشقر فاتح بنفسجي", color: "#9c27b0", neutralizes: "أصفر" },
-      "9.1": { name: "أشقر رمادي فاتح جدا", color: "#e0d9d0", neutralizes: "ذهبي/أصفر" },
-      "10M": { name: "أشقر بلاتيني مطفي", color: "#f2e6d8", neutralizes: "برتقالي/ذهبي" },
-      "12.75": { name: "أشقر بنفسجي ماهوجني", color: "#b565a7", neutralizes: "أصفر/ذهبي" }
+      "1.0":   { name:"أسود مزرق", color:"#0b0f1a", neutralizes:"برتقالي/ذهبي" },
+      "2.0":   { name:"أسود بني", color:"#1b1410", neutralizes:"برتقالي" },
+      "3.0":   { name:"بني غامق", color:"#3b2a1a", neutralizes:"برتقالي" },
+      "4.0":   { name:"بني متوسط", color:"#4b2e1f", neutralizes:"برتقالي" },
+      "4.1":   { name:"كستنائي رمادي (Ash)", color:"#4a3f36", neutralizes:"برتقالي" },
+      "4.3":   { name:"كستنائي ذهبي", color:"#7a4a2a", neutralizes:"أزرق/رمادي" },
+      "4.4":   { name:"كستنائي نحاسي", color:"#8b3b1f", neutralizes:"أزرق" },
+
+      "5.0":   { name:"بني فاتح", color:"#7b4f2f", neutralizes:"برتقالي" },
+      "5.1":   { name:"كستنائي فاتح رمادي", color:"#6a5c4f", neutralizes:"برتقالي" },
+      "5.3":   { name:"بني ذهبي فاتح", color:"#9c6b3f", neutralizes:"بنفسجي" },
+      "5.4":   { name:"بني فاتح نحاسي", color:"#b45f3c", neutralizes:"أزرق" },
+      "5.7":   { name:"بني فاتح بنفسجي", color:"#6a0dad", neutralizes:"أصفر/ذهبي" },
+      "5M":   { name:"بني فاتح مطفي", color:"#6e4b3a", neutralizes:"دفء/ذهبي" },
+
+      "6.0":   { name:"أشقر غامق", color:"#c49a6c", neutralizes:"برتقالي/ذهبي" },
+      "6.1":   { name:"أشقر رمادي غامق", color:"#8c7b6f", neutralizes:"برتقالي" },
+      "6.3":   { name:"أشقر ذهبي داكن", color:"#c49a6c", neutralizes:"أزرق" },
+      "6.4":   { name:"أشقر داكن نحاسي", color:"#d46a3a", neutralizes:"أزرق" },
+      "6.6":   { name:"أشقر داكن أحمر", color:"#a83232", neutralizes:"أخضر" },
+      "6.7":   { name:"أشقر داكن بنفسجي", color:"#7b1fa2", neutralizes:"أصفر" },
+      "6M":   { name:"أشقر غامق مطفي", color:"#8c6f56", neutralizes:"دفء/ذهبي" },
+
+      "7.0":   { name:"أشقر متوسط", color:"#d9b37d", neutralizes:"برتقالي/ذهبي" },
+      "7.1":   { name:"أشقر رمادي متوسط", color:"#a89c90", neutralizes:"برتقالي" },
+      "7.3":   { name:"أشقر ذهبي متوسط", color:"#d9b37d", neutralizes:"أزرق" },
+      "7.4":   { name:"أشقر متوسط نحاسي", color:"#e07b3c", neutralizes:"أزرق" },
+      "7.6":   { name:"أشقر متوسط أحمر", color:"#c0392b", neutralizes:"أخضر" },
+      "7.7":   { name:"أشقر متوسط بنفسجي", color:"#8e24aa", neutralizes:"أصفر" },
+      "7M":   { name:"أشقر متوسط مطفي", color:"#a68b73", neutralizes:"دفء/ذهبي" },
+
+      "8.0":   { name:"أشقر فاتح", color:"#f0d9a6", neutralizes:"برتقالي/ذهبي" },
+      "8.1":   { name:"أشقر رمادي فاتح", color:"#c8bfb5", neutralizes:"برتقالي" },
+      "8.3":   { name:"أشقر ذهبي فاتح", color:"#f0d9a6", neutralizes:"أزرق" },
+      "8.4":   { name:"أشقر فاتح نحاسي", color:"#f08c4a", neutralizes:"أزرق" },
+      "8.6":   { name:"أشقر فاتح أحمر", color:"#e74c3c", neutralizes:"أخضر" },
+      "8.7":   { name:"أشقر فاتح بنفسجي", color:"#9c27b0", neutralizes:"أصفر" },
+      "8M":   { name:"أشقر فاتح مطفي", color:"#c2a98f", neutralizes:"دفء/ذهبي" },
+
+      "9.0":   { name:"أشقر فاتح جداً", color:"#f7e7c6", neutralizes:"أصفر/ذهبي" },
+      "9.1":   { name:"أشقر رمادي فاتح جداً", color:"#e0d9d0", neutralizes:"ذهبي/أصفر" },
+      "9.3":   { name:"أشقر ذهبي فاتح جداً", color:"#f7e7c6", neutralizes:"أزرق" },
+      "9.7":   { name:"أشقر فاتح جداً بنفسجي", color:"#ba68c8", neutralizes:"أصفر" },
+      "9M":   { name:"أشقر فاتح جداً مطفي", color:"#e0cbb0", neutralizes:"دفء/ذهبي" },
+
+      "10.0":  { name:"أشقر بلاتيني", color:"#f9f5e3", neutralizes:"برتقالي/ذهبي" },
+      "10.1":  { name:"أشقر بلاتيني رمادي", color:"#f0edea", neutralizes:"برتقالي" },
+      "10.3":  { name:"أشقر بلاتيني ذهبي", color:"#faf6e8", neutralizes:"أزرق" },
+      "10M":  { name:"أشقر بلاتيني مطفي", color:"#f2e6d8", neutralizes:"دفء/ذهبي" },
+
+      "12.0":  { name:"أشقر طبيعي فاتح جداً", color:"#fbf7ea", neutralizes:"ذهبي/أصفر" },
+      "12.11": { name:"أشقر بيج مطفي", color:"#f0e6d2", neutralizes:"ذهبي/أصفر" },
+      "12.111":{ name:"أشقر رمادي بلاتيني", color:"#e6e6e6", neutralizes:"ذهبي/أصفر" },
+      "12.7":  { name:"أشقر رملي بنفسجي", color:"#d8bfd8", neutralizes:"أصفر" },
+      "12.75": { name:"أشقر بنفسجي ماهوجني", color:"#b565a7", neutralizes:"أصفر/ذهبي" }
     };
 
-    function mixColors() {
-      const catalog = document.getElementById("catalogColor").value;
-      if(catalogDB[catalog]) {
-        document.getElementById("result").style.backgroundColor = catalogDB[catalog].color;
-        document.getElementById("description").innerText =
-          "النتيجة: " + catalogDB[catalog].name +
-          " — هذا اللون يعادل/يلغي: " + catalogDB[catalog].neutralizes;
-      } else {
-        document.getElementById("result").style.backgroundColor = "#ccc";
-        document.getElementById("description").innerText = "النتيجة غير موجودة في القاعدة";
-      }
+    // خريطة توصية التونر/مقوّم اللون بناءً على ما يجب إلغاؤه
+    const neutralizerToToner = {
+      "برتقالي": "أشقر رمادي / Blue-Ash toner (رمادي أزرق) لإلغاء البرتقالي",
+      "برتقالي/ذهبي": "تونر رمادي/أزرق أو مطفي (Ash/Blue or Mat) لإزالة الدفء",
+      "ذهبي/أصفر": "تونر بنفسجي (Violet toner) لإلغاء الأصفر/الذهبي",
+      "أصفر": "تونر بنفسجي (Violet toner)",
+      "أزرق": "تونر برتقالي/ذهبي (Warm) لإضافة دفء إن لزم",
+      "أخضر": "تونر أحمر/ماهوغني (Red/Mahogany) لتعديل الأخضر الناتج",
+      "بنفسجي": "تونر ذهبي/أصفر لإضافة دفء إن لزم",
+      "دفء/ذهبي": "تونر مطفي (Mat) أو بنفسجي حسب شدة الأصفر"
+    };
+
+    // دالة مساعدة لاستخراج مستوى اللون (الجزء الصحيح قبل النقطة أو الحرف)
+    function parseLevel(code) {
+      // أمثلة: "7.3", "10M", "5.3"
+      if(!code) return null;
+      // إذا كان حرفي في النهاية (مثل 5M) نأخذ الرقم قبل الحرف
+      const match = code.match(/^(\d+)(?:[.,](\d+))?/);
+      if(!match) return null;
+      return parseInt(match[1], 10);
     }
+
+    // دالة العرض الرئيسية
+    function mixColors() {
+      const baseLevel = parseInt(document.getElementById("baseColor").value, 10);
+      const catalog = document.getElementById("catalogColor").value;
+      const resultBox = document.getElementById("result");
+      const desc = document.getElementById("description");
+
+      if(!catalogDB[catalog]) {
+        resultBox.style.backgroundColor = "#cccccc";
+        desc.innerHTML = "<strong>النتيجة غير موجودة في القاعدة.</strong> أضف الكود إلى القاعدة.";
+        return;
+      }
+
+      const entry = catalogDB[catalog];
+      resultBox.style.backgroundColor = entry.color;
+      resultBox.style.borderColor = shadeColor(entry.color, -12);
+
+      // توصية التونر بناءً على neutralizes
+      const neutral = entry.neutralizes || "—";
+      const tonerSuggestion = neutralizerToToner[neutral] || neutralizerToToner[neutral.split("/")[0]] || "لا حاجة لتونر خاص إذا اللون متوازن";
+
+      // تحقق بسيط لمطابقة مستوى الأساس مع الهدف
+      const targetLevel = parseLevel(catalog);
+      let levelNote = "";
+      if(targetLevel && baseLevel) {
+        if(targetLevel > baseLevel + 2) {
+          levelNote = "<div class='warning'>ملاحظة: الدرجة المطلوبة أفتح بكثير من لونك الحالي. ستحتاج إلى تفتيح (تبييض/مزيل لون) قبل الصبغ للحصول على نتيجة قريبة.</div>";
+        } else if(targetLevel < baseLevel) {
+          levelNote = "<div class='note'>ملاحظة: الدرجة المطلوبة أغمق من لونك الحالي — الصبغ المباشر ممكن بدون تفتيح.</div>";
+        } else {
+          levelNote = "<div class='note'>ملاحظة: الفرق في المستويات صغير؛ الصبغ المباشر قد يعطي نتيجة قريبة.</div>";
+        }
+      }
+
+      // عرض النتائج
+      desc.innerHTML = ""
+        + "<strong>النتيجة المتوقعة:</strong> " + entry.name + "<br>"
+        + "<strong>كود الكتالوج:</strong> " + catalog + "<br>"
+        + "<strong>يلغي/يعادل:</strong> " + neutral + "<br>"
+        + "<strong>توصية تونر/تصحيح:</strong> " + tonerSuggestion
+        + levelNote
+        + "<div class='small' style='margin-top:8px;'>ملاحظة: الألوان هنا تقريبية بصرياً (HEX) وتعتمد على حالة الشعر الحقيقية، وجودة الصبغة، ووقت التعرض.</div>";
+    }
+
+    // دالة بسيطة لتغميق/تفتيح لون الحدود
+    function shadeColor(hex, percent) {
+      // hex like "#aabbcc"
+      const f = hex.slice(1);
+      const t = percent < 0 ? 0 : 255;
+      const p = Math.abs(percent) / 100;
+      const R = parseInt(f.substring(0,2),16);
+      const G = parseInt(f.substring(2,4),16);
+      const B = parseInt(f.substring(4,6),16);
+      const newR = Math.round((t - R) * p) + R;
+      const newG = Math.round((t - G) * p) + G;
+      const newB = Math.round((t - B) * p) + B;
+      return "#" + ((1<<24) + (newR<<16) + (newG<<8) + newB).toString(16).slice(1);
+    }
+
+    // اختياري: ملء select تلقائياً من القاموس لو أردت توسيع لاحقاً
+    // (موجودة هنا كمرجع، لا تُفعل تلقائياً لتجنب تكرار العناصر)
+    // function populateSelect() { ... }
+
+    // اختصار: عرض أول اختيار عند التحميل
+    document.addEventListener("DOMContentLoaded", function() {
+      // عرض افتراضي
+      mixColors();
+    });
   </script>
 </body>
 </html>
